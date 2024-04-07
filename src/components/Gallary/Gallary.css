@@ -1,0 +1,53 @@
+.gallary,
+.gallary_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallary_content {
+  width: 100%;
+}
+.add_images {
+  position: relative;
+  top: -20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.add_images label {
+  width: 350px;
+  background-color: #999;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.add-product-pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.add-product-pic p {
+  color: #000;
+}
+.add-product-pic svg {
+  font-size: 150px;
+  color: #000;
+}
+.select-input {
+  display: none;
+}
+.images_list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.images_list img {
+  width: 200px;
+  border-radius: 10px;
+}

@@ -1,0 +1,41 @@
+.contact,
+.contact_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact_list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.contact_item {
+  width: 500px;
+  background-color: #999;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact_item h3 {
+  font-size: 25px;
+}
+.contact_item h5 {
+  font-size: 20px;
+}
+.contact_item p span {
+  color: #000;
+  font-size: 22px;
+}
+@media screen and (max-width: 489px) {
+  .contact_item {
+    width: 380px;
+  }
+}
