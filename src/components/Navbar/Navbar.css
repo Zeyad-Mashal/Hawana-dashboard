@@ -3,3 +3,6 @@
   top: -30px;
   height: 100px;
 }
+.container-fluid .offcanvas {
+  width: 320px;
+}
