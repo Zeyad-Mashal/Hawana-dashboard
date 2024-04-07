@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .gallary_content {
   width: 100%;
@@ -47,7 +48,86 @@
   gap: 1rem;
   flex-wrap: wrap;
 }
-.images_list img {
+.images_item {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+.images_item img {
   width: 200px;
   border-radius: 10px;
+  background-color: red;
+}
+.images_item div button {
+  padding: 10px 20px;
+  border: 1px solid #999;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+.images_item div button:hover {
+  background-color: #000;
+  color: #fff;
+}
+.delete_image {
+  position: fixed;
+  top: 30%;
+  background-color: #ccc;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 4px 5px 5px #888;
+  padding: 1rem;
+  width: 450px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.delete_image h4 {
+  margin-bottom: 2rem;
+  font-size: 25px;
+}
+.delete_image div button {
+  padding: 10px 20px;
+  border: 1px solid #999;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+.delete_image div button:hover {
+  background-color: #000;
+  color: #fff;
+}
+.update_image {
+  position: fixed;
+  top: 30%;
+}
+.update_image .add_images,
+.update_image .add_images label {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+.update_image .add_images div button {
+  padding: 10px 20px;
+  border: 1px solid #999;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+.update_image .add_images div button:hover {
+  background-color: #000;
+  color: #fff;
+}
+@media screen and (max-width: 489px) {
+  .delete_image,
+  .update_image {
+    width: 350px;
+  }
 }
