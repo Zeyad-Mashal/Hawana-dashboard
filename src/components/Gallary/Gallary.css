@@ -55,11 +55,12 @@
   align-items: center;
   gap: 1rem;
   flex-direction: column;
+  background-color: #ccc;
+  border-radius: 1rem;
 }
 .images_item img {
   width: 200px;
   border-radius: 10px;
-  background-color: red;
 }
 .images_item div button {
   padding: 10px 20px;
