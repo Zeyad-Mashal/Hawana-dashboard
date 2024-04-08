@@ -1,56 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ContactUs.css";
+import getContact from "../../Api/getContact.api";
 const ContactUs = () => {
+  useEffect(() => {
+    getAllContactApi();
+  }, []);
+  const [contactLoading, setContactLoading] = useState(false);
+  const [contactError, setContactError] = useState("");
+  const [allContact, setAllContact] = useState([]);
+  const getAllContactApi = () => {
+    getContact(setAllContact, setContactLoading, setContactError);
+  };
   return (
     <div className="contact">
       <div className="contact_container">
-        <div className="contact_list">
-          <div className="contact_item">
-            <h3>اسم العميل: زياد مشعل</h3>
-            <h5>ايميل العميل: example@gmail.com</h5>
-            <h4>رقم الهاتف: 12345678953</h4>
-            <p>
-              <span>رسالة العميل:</span> <tr />
-              ماسكارا لاش برينسس فالس لاش ايفكت المقاومة للماء اسود من ايسنس
-              12مل : عززي كثافة وطول رموشك بهذه الماسكارا الرائعة من ايسنس
-              واجعلي عينيك أجمل. تركيبتها المميزة خفيفة الوزن ومقاومة للماء، كما
-              انها قابله لزيادة طبقاتها بدون تكتل كي تمنح رموشك حجمًا أكبر
-              وطولًا مثاليًا. فرشاتها العملية مصممة لتصل لكل الشعيرات الطويلة
-              والصغيرة حتى الرموش السفلية لتغطيها باللون الكثيف الجذاب. تركيبة
-              متكاملة توفر تغطية مثالية من الجذور حتى الأطراف.{" "}
-            </p>
+        {contactLoading ? (
+          <span class="loader"></span>
+        ) : contactError ? (
+          <h4>{contactError}</h4>
+        ) : (
+          <div className="contact_list">
+            {allContact.map((item) => {
+              return (
+                <div className="contact_item" key={item._id}>
+                  <h3>اسم العميل: {item.userName}</h3>
+                  <h5>البريد الالكتروني: {item.email}</h5>
+                  <h4>رقم الهاتف: {item.phoneNumber}</h4>
+                  <p>
+                    <span>رسالة العميل:</span> <tr />
+                    {item.message}
+                  </p>
+                </div>
+              );
+            })}
           </div>
-          <div className="contact_item">
-            <h3>اسم العميل: زياد مشعل</h3>
-            <h5>ايميل العميل: example@gmail.com</h5>
-            <h4>رقم الهاتف: 12345678953</h4>
-            <p>
-              <span>رسالة العميل:</span> <tr />
-              ماسكارا لاش برينسس فالس لاش ايفكت المقاومة للماء اسود من ايسنس
-              12مل : عززي كثافة وطول رموشك بهذه الماسكارا الرائعة من ايسنس
-              واجعلي عينيك أجمل. تركيبتها المميزة خفيفة الوزن ومقاومة للماء، كما
-              انها قابله لزيادة طبقاتها بدون تكتل كي تمنح رموشك حجمًا أكبر
-              وطولًا مثاليًا. فرشاتها العملية مصممة لتصل لكل الشعيرات الطويلة
-              والصغيرة حتى الرموش السفلية لتغطيها باللون الكثيف الجذاب. تركيبة
-              متكاملة توفر تغطية مثالية من الجذور حتى الأطراف.{" "}
-            </p>
-          </div>
-          <div className="contact_item">
-            <h3>اسم العميل: زياد مشعل</h3>
-            <h5>ايميل العميل: example@gmail.com</h5>
-            <h4>رقم الهاتف: 12345678953</h4>
-            <p>
-              <span>رسالة العميل:</span> <tr />
-              ماسكارا لاش برينسس فالس لاش ايفكت المقاومة للماء اسود من ايسنس
-              12مل : عززي كثافة وطول رموشك بهذه الماسكارا الرائعة من ايسنس
-              واجعلي عينيك أجمل. تركيبتها المميزة خفيفة الوزن ومقاومة للماء، كما
-              انها قابله لزيادة طبقاتها بدون تكتل كي تمنح رموشك حجمًا أكبر
-              وطولًا مثاليًا. فرشاتها العملية مصممة لتصل لكل الشعيرات الطويلة
-              والصغيرة حتى الرموش السفلية لتغطيها باللون الكثيف الجذاب. تركيبة
-              متكاملة توفر تغطية مثالية من الجذور حتى الأطراف.{" "}
-            </p>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

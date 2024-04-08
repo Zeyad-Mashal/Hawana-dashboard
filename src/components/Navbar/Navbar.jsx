@@ -3,6 +3,10 @@ import "./Navbar.css";
 import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 const Navbar = () => {
+  const logOut = () => {
+    localStorage.removeItem("Hawana-Logged-In");
+    window.location.reload();
+  };
   return (
     <nav class="navbar navbar-dark bg-dark">
       <div class="container-fluid">
@@ -44,6 +48,11 @@ const Navbar = () => {
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <Link to={"/contact"}>استلام تواصل معنا</Link>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" onClick={logOut}>
+                  تسجيل الخروج
                 </a>
               </li>
             </ul>
