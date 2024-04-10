@@ -10,9 +10,9 @@ function App() {
     <div className="App" >
       {isAuth ? <Navbar /> : ''}
       <Routes>
-        <Route path='Hawana-dashboard/gallary' element={isAuth ? <Gallary /> : <Navigate to="/" />} />
-        <Route path='Hawana-dashboard/contact' element={isAuth ? <ContactUs /> : <Navigate to="/" />} />
-        <Route path='Hawana-dashboard/' element={isAuth ? <Navigate to="/gallary" /> : <Login />} />
+        <Route path='/gallary' element={isAuth ? <Gallary /> : <Navigate to="/" />} />
+        <Route path='/contact' element={isAuth ? <ContactUs /> : <Navigate to="/" />} />
+        <Route path='/' element={isAuth ? <Navigate to="/gallary" /> : <Login />} />
       </Routes>
 
     </div>
