@@ -5,9 +5,92 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: -15px;
+}
+.gallary_container select {
+  padding: 10px 30px;
+  width: 30%;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-radius: 16px;
+  outline: none;
+  font-size: 18px;
+}
+@media screen and (max-width: 489px) {
+  .gallary_container select {
+    width: 80%;
+  }
 }
 .gallary_content {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add_btn {
+  width: 80%;
+  margin: 1rem auto;
+  padding: 10px;
+  border: 2px solid #999;
+  border-radius: 16px;
+  box-shadow: 4px 5px 5px #999;
+  font-size: 18px;
+  font-weight: bold;
+}
+.gallary_conetent_add {
+  position: fixed;
+  top: 25px;
+  z-index: 999;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 2rem 0px;
+  background-color: #fff;
+  box-shadow: 4px 5px 5px #999;
+  border-radius: 16px;
+  overflow-y: scroll;
+}
+.gallary_conetent_add > svg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 50px;
+  font-size: 45px;
+  cursor: pointer;
+}
+.gallary_inputs {
+  width: 100%;
+}
+.inputs_name,
+.inputs_desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0px;
+  width: 100%;
+}
+.inputs_name input,
+.inputs_desc textarea {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #999;
+  width: 250px;
+  outline: none;
+}
+.section_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.dropdown-center .btn,
+.dropdown-center .dropdown-menu {
+  width: 250px;
 }
 .add_images {
   position: relative;
@@ -23,6 +106,9 @@
   background-color: #999;
   padding: 1rem;
   border-radius: 1rem;
+}
+.add_images img {
+  width: 250px;
 }
 .add-product-pic {
   display: flex;
@@ -49,7 +135,7 @@
   flex-wrap: wrap;
 }
 .images_item {
-  width: 350px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +145,7 @@
   border-radius: 1rem;
 }
 .images_item img {
-  width: 200px;
+  width: 300px;
   height: 250px;
 }
 .images_item div button {
@@ -118,6 +204,16 @@
   font-size: 18px;
   transition: 0.3s ease;
 }
+.udpate_image {
+  width: 250px;
+  position: fixed;
+  top: 10%;
+  left: 40%;
+}
+.update_image img {
+  width: 100%;
+  height: 300px;
+}
 .update_image .add_images div button:hover {
   background-color: #000;
   color: #fff;
@@ -126,6 +222,13 @@
   .delete_image,
   .update_image {
     width: 350px;
+  }
+  .gallary_conetent_add {
+    width: 95%;
+  }
+  .inputs_name,
+  .inputs_desc {
+    flex-direction: column;
   }
 }
 .erro {
@@ -138,6 +241,7 @@
   border: 1px solid #999;
   font-size: 18px;
   border-radius: 10px;
+  margin-bottom: 1rem;
 }
 .loader {
   width: 32px;
@@ -157,4 +261,9 @@
   100% {
     transform: rotate(360deg);
   }
+}
+.update_product > svg {
+  position: absolute;
+  top: 10%;
+  left: 0%;
 }

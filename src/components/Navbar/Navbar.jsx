@@ -51,6 +51,11 @@ const Navbar = () => {
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <Link to={"/category"}>أضافة فئة جديدة</Link>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#" onClick={logOut}>
                   تسجيل الخروج
                 </a>
