@@ -8,6 +8,7 @@ import getProductByCategory from "../../Api/getProductByCategory.api";
 import addProduct from "../../Api/addProduct.api";
 import udpateProduct from "../../Api/udpateProduct.api";
 import deleteProduct from "../../Api/deleteProduct.api";
+import getSubCategory from "../../Api/getSubCategory";
 const Gallary = () => {
   useEffect(() => {
     getAllCategoryApi();
@@ -32,10 +33,14 @@ const Gallary = () => {
   const [productId, setProductId] = useState("");
   const [productErrorDelete, setProductErrorDelete] = useState("");
   const [productLoadingDelete, setProductLoadingDelete] = useState(false);
-
-  const deleteImage = (productId, categoryId) => {
+  const [allSubCategory, setAllSubCategory] = useState([]);
+  const [subcategoryError, setSubcategoryError] = useState("");
+  const [subCategoryLoading, setSubCategoryLoading] = useState(false);
+  const [subCategoryId, setSubCategoryId] = useState("");
+  const [mainCategory, setMainCategory] = useState("");
+  const [subCategory, setSubCategory] = useState("");
+  const deleteImage = (productId) => {
     setProductId(productId);
-    setCategoryId(categoryId);
     document
       .querySelector(".delete_image")
       .classList.replace("d-none", "d-flex");
@@ -74,14 +79,34 @@ const Gallary = () => {
   const getAllCategoryApi = () => {
     getAllCategory(setAllCategory);
   };
+  const getAllSubCategory = (categoryID) => {
+    getSubCategory(
+      setAllSubCategory,
+      categoryID,
+      setSubCategoryLoading,
+      setSubcategoryError
+    );
+  };
   const getCategoryId = (e) => {
     const categoryName = e.target.value;
-    if (categoryName != "أختر الفئة المطلوبة") {
+    if (categoryName != "أختر الفئة الرئيسية") {
       const categoryID = allcategory.filter(
         (item) => item.categoryName_Ar == categoryName
       )[0]._id;
+      setMainCategory(categoryName);
       setCategoryId(categoryID);
-      getAllProductByCategory(categoryID);
+      getAllSubCategory(categoryID);
+    }
+  };
+  const getSubCategoryId = (e) => {
+    const subCategoryName = e.target.value;
+    if (subCategoryName != "أختر الفئة الفرعية") {
+      const subCategoryId = allSubCategory.filter(
+        (item) => item.subCategory_Ar == subCategoryName
+      )[0]._id;
+      setSubCategoryId(subCategoryId);
+      getAllProductByCategory(subCategoryId);
+      setSubCategory(subCategoryName);
     }
   };
   const selectImage = (e) => {
@@ -96,9 +121,12 @@ const Gallary = () => {
     setpDescAr("");
     setpDescEn("");
     setCategoryId("");
+    setSubCategoryId("");
     document
       .querySelector(".gallary_conetent_add")
       .classList.replace("d-none", "d-block");
+    setMainCategory("أختر الفئة الرئيسية");
+    setSubCategory("أختر الفئة الفرعية");
   };
   const closeAdd = () => {
     document
@@ -123,7 +151,8 @@ const Gallary = () => {
         pNameEn == "" ||
         pDescAr == "" ||
         pDescEn == "" ||
-        categoryId == ""
+        categoryId == "" ||
+        subCategoryId == ""
       ) {
         setAddProductError("قم بإدخال بيانات المنتج كاملة");
       } else {
@@ -133,7 +162,7 @@ const Gallary = () => {
         productData.append("translation.ar.description", pDescAr);
         productData.append("translation.en.productName", pNameEn);
         productData.append("translation.en.description", pDescEn);
-        productData.append("category", categoryId);
+        productData.append("subCategory", subCategoryId);
         addProduct(
           productData,
           setAddProductLoading,
@@ -156,7 +185,7 @@ const Gallary = () => {
       productData.append("translation.ar.description", pDescAr);
       productData.append("translation.en.productName", pNameEn);
       productData.append("translation.en.description", pDescEn);
-      productData.append("category", categoryId);
+      productData.append("subCategory", subCategoryId);
       udpateProduct(
         productData,
         setAllProducts,
@@ -173,7 +202,7 @@ const Gallary = () => {
       setProductLoadingDelete,
       setProductErrorDelete,
       productId,
-      categoryId
+      subCategoryId
     );
   };
   return (
@@ -183,12 +212,20 @@ const Gallary = () => {
           أضافة منتج جديد
         </button>
         <select onChange={getCategoryId}>
-          <option value="اختر الفئة المطلوبة">اختر الفئة المطلوبة</option>
+          <option value="اختر الفئة الرئيسية">اختر الفئة الرئيسية</option>
           {allcategory.map((item) => {
             return (
               <option value={item.categoryName_Ar}>
                 {item.categoryName_Ar}
               </option>
+            );
+          })}
+        </select>
+        <select onChange={getSubCategoryId}>
+          <option value="اختر الفئة الفرعية">اختر الفئة الفرعية</option>
+          {allSubCategory.map((item) => {
+            return (
+              <option value={item.subCategory_Ar}>{item.subCategory_Ar}</option>
             );
           })}
         </select>
@@ -244,14 +281,24 @@ const Gallary = () => {
                 />
               </div>
               <div className="section_menu">
-                <select onChange={getCategoryId}>
-                  <option value="أختر الفئة المطلوبة">
-                    أختر الفئة المطلوبة
+                <select onChange={getCategoryId} value={mainCategory}>
+                  <option value="اختر الفئة الرئيسية">
+                    اختر الفئة الرئيسية
                   </option>
                   {allcategory.map((item) => {
                     return (
                       <option value={item.categoryName_Ar}>
                         {item.categoryName_Ar}
+                      </option>
+                    );
+                  })}
+                </select>
+                <select onChange={getSubCategoryId} value={subCategory}>
+                  <option value="اختر الفئة الفرعية">اختر الفئة الفرعية</option>
+                  {allSubCategory.map((item) => {
+                    return (
+                      <option value={item.subCategory_Ar}>
+                        {item.subCategory_Ar}
                       </option>
                     );
                   })}
@@ -273,11 +320,7 @@ const Gallary = () => {
                   <h3>{item.translation.ar.productName}</h3>
                   <p>{item.translation.ar.description}</p>
                   <div>
-                    <button
-                      onClick={() => deleteImage(item._id, item.category)}
-                    >
-                      حذف
-                    </button>
+                    <button onClick={() => deleteImage(item._id)}>حذف</button>
                     <button
                       onClick={() =>
                         openUpdateImage(

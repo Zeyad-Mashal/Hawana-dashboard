@@ -6,6 +6,7 @@ import updateCategory from "../../Api/updateCategory.api.js";
 import deleteCategory from "../../Api/deleteCategory.api.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 const AddCategory = () => {
   useEffect(() => {
     getAllCategoryApi();
@@ -164,7 +165,9 @@ const AddCategory = () => {
           {allCategory.map((item) => {
             return (
               <div className="category_item">
-                <img src={item.categoryPic} style={{ width: 120 }} />
+                <Link to={`/subcategory/${item._id}`}>
+                  <img src={item.categoryPic} style={{ width: 120 }} />
+                </Link>
                 <h4>{item.categoryName_Ar}</h4>
                 <div className="category_item_btn">
                   <button
