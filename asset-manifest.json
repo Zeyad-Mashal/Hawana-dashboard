@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Hawana-dashboard/static/css/main.558cdab8.css",
-    "main.js": "/Hawana-dashboard/static/js/main.5381b32e.js",
+    "main.js": "/Hawana-dashboard/static/js/main.6f0638d4.js",
     "static/media/logo.png": "/Hawana-dashboard/static/media/logo.8c1b780e76820d96cfd6.png",
     "index.html": "/Hawana-dashboard/index.html",
     "main.558cdab8.css.map": "/Hawana-dashboard/static/css/main.558cdab8.css.map",
-    "main.5381b32e.js.map": "/Hawana-dashboard/static/js/main.5381b32e.js.map"
+    "main.6f0638d4.js.map": "/Hawana-dashboard/static/js/main.6f0638d4.js.map"
   },
   "entrypoints": [
     "static/css/main.558cdab8.css",
-    "static/js/main.5381b32e.js"
+    "static/js/main.6f0638d4.js"
   ]
 }
