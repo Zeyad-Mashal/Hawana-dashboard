@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/subCategory/addSubCategory";
+const URL = "https://hwnofficial.host/subCategory/addSubCategory";
 const AddSubCategoryApi = (data, setSubCategoryLoading, setSubcategoryError, setAllSubCategory, setSubNameAr, setSubNameEn, setPrevImage, setImageURL, categoryId) => {
     setSubCategoryLoading(true)
     fetch(`${URL}/${categoryId}`, {

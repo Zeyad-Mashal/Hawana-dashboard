@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/category/addCategory";
+const URL = "https://hwnofficial.host/category/addCategory";
 const addCategory = (data, setCategoryLoading, setCategoryError, setAllCategory, setCategoryNameEn, setCategoryNameAr, setPrevImage, setImageURL) => {
     setCategoryLoading(true)
     fetch(URL, {

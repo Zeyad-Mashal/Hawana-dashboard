@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/picture/addPicture";
+const URL = "https://hwnofficial.host/picture/addPicture";
 const addImage = (picture, setImageLoading, setImageError, setAllImages, setPrevImage) => {
     setImageLoading(true)
     fetch(URL, {

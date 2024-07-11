@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/subCategory/getSubCategory/";
+const URL = "https://hwnofficial.host/subCategory/getSubCategory/";
 const getSubCategory = (setAllSubCategory, categoryId, setSubCategoryLoading, setSubcategoryError) => {
     setSubCategoryLoading(true);
     fetch(`${URL}${categoryId}`, {

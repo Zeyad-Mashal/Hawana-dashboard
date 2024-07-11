@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/product/removeProduct";
+const URL = "https://hwnofficial.host/product/removeProduct";
 const deleteProduct = (setAllProducts, setProductLoadingDelete, setProductErrorDelete, productId, categoryId) => {
     setProductLoadingDelete(true)
     fetch(`${URL}/${productId}/${categoryId}`, {

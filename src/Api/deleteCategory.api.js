@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/category/removeCategory";
+const URL = "https://hwnofficial.host/category/removeCategory";
 const deleteCategory = (setAllCategory, setUpdateCategoryLoading, setUpdateCategoryError, categoryId) => {
     setUpdateCategoryLoading(true)
     fetch(`${URL}/${categoryId}`, {

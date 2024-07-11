@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/picture/removePicture";
+const URL = "https://hwnofficial.host/picture/removePicture";
 const deleteImageApi = (setAllImages, setImageLoadingDelete, setImageErrorDelete, imageId) => {
     setImageLoadingDelete(true)
     fetch(`${URL}/${imageId}`, {

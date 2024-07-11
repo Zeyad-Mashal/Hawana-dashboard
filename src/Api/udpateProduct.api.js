@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/product/updateProduct";
+const URL = "https://hwnofficial.host/product/updateProduct";
 const udpateProduct = (data, setAllproducts, setUpdateLoading, setUpdateError, productId) => {
     setUpdateLoading(true)
     fetch(`${URL}/${productId}`, {

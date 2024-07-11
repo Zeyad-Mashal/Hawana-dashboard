@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/category/getcategory";
+const URL = "https://hwnofficial.host/category/getcategory";
 const getAllCategory = (setAllCategory) => {
     fetch(URL, {
         method: "GET",

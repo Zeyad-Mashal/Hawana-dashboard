@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/contact/getContact";
+const URL = "https://hwnofficial.host/contact/getContact";
 const getContact = (setAllContact, setContactLoading, setContactError) => {
     setContactLoading(true)
     fetch(URL, {

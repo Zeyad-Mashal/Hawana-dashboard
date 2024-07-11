@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/auth/login";
+const URL = "https://hwnofficial.host/auth/login";
 const LoginApi = (data, setLoginLoading, setLoginError) => {
     setLoginLoading(true)
     fetch(URL, {

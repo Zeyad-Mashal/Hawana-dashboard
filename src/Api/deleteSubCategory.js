@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/subCategory/removeSubCategory";
+const URL = "https://hwnofficial.host/subCategory/removeSubCategory";
 const deleteSubCategory = (setAllSubCategory, setUpdateSubCategoryLoading, setUpdateSubCategoryError, categoryId, subcategoryId) => {
     setUpdateSubCategoryLoading(true)
     fetch(`${URL}/${subcategoryId}/${categoryId}`, {

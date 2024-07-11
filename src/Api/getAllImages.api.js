@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/picture/getPicture";
+const URL = "https://hwnofficial.host/picture/getPicture";
 const getAllImages = (setAllImages) => {
     fetch(URL, {
         method: "GET",

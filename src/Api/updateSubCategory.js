@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/subCategory/updateSubCategory";
+const URL = "https://hwnofficial.host/subCategory/updateSubCategory";
 const updateSubCategory = (data, setUpdateSubCategoryLoading, setUpdateSubCategoryError,
     setAllSubCategory, setUpdateNameAr, setUpdateNameEn,
     setUpdatePrevImage, setImageURL, categoryId, subCategoryId) => {

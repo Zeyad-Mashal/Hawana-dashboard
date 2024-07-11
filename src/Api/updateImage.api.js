@@ -1,4 +1,4 @@
-const URL = "https://hawana.onrender.com/picture/updatePicture";
+const URL = "https://hwnofficial.host/picture/updatePicture";
 const updateImage = (picture, setAllImages, setUpdateLoading, setUpdateError, imageId) => {
     setUpdateLoading(true)
     fetch(`${URL}/${imageId}`, {
